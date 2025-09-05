@@ -1,4 +1,4 @@
-# Highlighter-v2
+# Highlighter-v2-support
 A simple browser extension that highlights text and allows quick annotations.
 
 ## Features
