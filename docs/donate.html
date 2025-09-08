@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Support Highlighter-Plus — Donate</title>
+  <link rel="icon" type="image/png" sizes="19x19" href="assets/icons/19x19.png">
+  <link rel="stylesheet" href="css/home.css" />
+  <link rel="stylesheet" href="css/donate.css" />
+</head>
+<body>
+  <main class="card" role="main" aria-labelledby="donate-heading">
+    <h1 id="donate-heading" class="card-title">
+      <img src="assets/src/48x48.png" alt="Highlighter logo" class="brand-icon" aria-hidden="true" />
+      Support Highlighter-Plus — Donate
+    </h1>
+
+    <p>Enter an amount in USD and click <strong>Pay with PayPal</strong>.<br><br>You will be redirected to PayPal to finish the payment.</p>
+
+    <div class="controls">
+      <div class="amount-wrap">
+        <label for="amount" class="label-amount">Amount (USD)</label>
+        <input id="amount" type="number" step="0.01" min="0.01" placeholder="e.g. 5.00" inputmode="decimal"/>
+      </div>
+
+      <div class="pay-wrap">
+        <button id="pay-btn" class="btn-primary" aria-label="Pay with PayPal">
+          <img src="https://www.paypalobjects.com/webstatic/mktg/Logo/pp-logo-100px.png" alt="Pay with PayPal" />
+        </button>
+      </div>
+    </div>
+
+    <div class="presets" aria-hidden="false" style="margin-bottom:.6rem;">
+      <button class="btn-amt" data-amt="2">$2</button>
+      <button class="btn-amt" data-amt="5">$5</button>
+      <button class="btn-amt" data-amt="10">$10</button>
+      <button class="btn-amt" data-amt="25">$25</button>
+    </div>
+
+    <div class="small">By donating you help keep Highlighter-Pro maintained. PayPal may ask you to log in or confirm details.</div>
+
+    <footer>
+      Need a different currency or have questions?
+      Open an issue on the
+      <a href="https://imeanup.github.io/highlighter-support/help.html" target="_blank" rel="noopener" class="link-primary">
+        project help
+      </a>.
+    </footer>
+  </main>
+
+    <script>
+        (function () {
+            const PATH_BASE = 'https://paypal.me/imeanup/';
+            const CURRENCY_QUERY = '?currencyCode=USD';
+
+            function sanitizeAmountStr(amount) {
+                if (amount === null || amount === undefined) return null;
+                const s = String(amount).trim();
+                if (!s) return null;
+                const amt = parseFloat(s);
+                if (!isFinite(amt) || amt < 1) return null;
+                return amt.toFixed(2).replace(/\.00$/,'').replace(/(\.\d)0$/,'$1');
+            }
+            function goToPaypal(amountStr) {
+                const normalized = sanitizeAmountStr(amountStr);
+                if (!normalized) {
+                    alert('Please enter a valid amount greater than or equal to $1 \n(e.g. $5 or $5.50).');
+                    return;
+                }
+                const url = PATH_BASE + encodeURIComponent(normalized) + CURRENCY_QUERY;
+                window.location.href = url;
+            }
+            document.getElementById('pay-btn').addEventListener('click', function (ev) {
+                ev.preventDefault();
+                const amt = document.getElementById('amount').value;
+                goToPaypal(amt);
+            });
+            document.querySelectorAll('.btn-amt').forEach(function (b) {
+                b.addEventListener('click', function (ev) {
+                    ev.preventDefault();
+                    const val = b.getAttribute('data-amt');
+                    document.getElementById('amount').value = val;
+                });
+            });
+        })();
+    </script>
+</body>
+</html>
