@@ -1,4 +1,4 @@
-# Highlighter-plus-support
+# Highlight Plus Support
 A simple browser extension that highlights text and allows quick annotations.
 
 ## Features
