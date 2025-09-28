@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head> 
+        <meta charset="UTF-8"/> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <meta name="theme-color" content="#0d6efd"/> 
+        <title>Highlight Plus — Privacy Policy</title> 
+        <meta name="description" content="Highlight Plus privacy policy: on‑device highlighting, no personal data collection, no sale or sharing."/> 
+        <meta name="robots" content="index,follow">
+        <link rel="canonical" href="https://imeanup.github.io/highlighter-support/privacy.html">
+
+        <!-- Favicon -->
+        <link rel="icon" type="image/png" sizes="19x19" href="assets/icons/19x19.png"> 
+            
+        <!-- Fonts & icons --> 
+        <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin> 
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet"> 
+            
+        <!-- Font Awesome (single include) -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+        <!-- Bootstrap CSS (with SRI) --> 
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+            crossorigin="anonymous">
+
+        <!-- Site CSS -->
+        <link rel="stylesheet" href="css/home.css">
+
+        <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+        }
+        h1, h2, h3 {
+            margin-top: 1.5rem;
+        }
+        .section-divider {
+            border-top: 2px solid #dee2e6;
+            margin: 2rem 0;
+        }
+        .brand-icon {
+            width: 32px;
+            height: 32px;
+            vertical-align: middle;
+            margin-right: .5rem;
+        }
+        main:focus {
+            outline: 3px solid #0d6efd;
+            outline-offset: 4px;
+        }
+        .skip-link {
+            position: absolute;
+            left: -999px;
+            top: -999px;
+        }
+        .skip-link:focus {
+            left: 1rem;
+            top: 1rem;
+            z-index: 1000;
+            background: #0d6efd;
+            color: #fff;
+            padding: .5rem .75rem;
+            border-radius: .25rem;
+            text-decoration: none;
+        }
+        </style>
+    </head>
+    <body>
+        <a class="skip-link" href="#content">Skip to content</a>
+        <main id="content" class="container py-5" role="main">
+        <header class="mb-4 text-center" role="banner">
+            <h1>
+            <img src="assets/src/48x48.png" alt="" class="brand-icon" aria-hidden="true" />
+            Highlight Plus — Privacy Policy
+            </h1>
+            <div class="container">
+            <div class="d-flex align-items-center justify-content-between mb-3">
+                <div class="d-flex align-items-center gap-3"></div>
+                <div class="d-flex align-items-center gap-2">
+                <a class="btn btn-outline-secondary" href="index.html" aria-label="Go home">
+                    <i class="fa-solid fa-house me-2" aria-hidden="true"></i>Home
+                </a>
+                </div>
+            </div>
+            </div>
+        </header>
+
+        <hr class="section-divider">
+
+        <section aria-labelledby="overview">
+            <h2 id="overview">Overview</h2>
+            <p>
+            Highlight Plus processes page content locally to visually highlight words specified by the user, without collecting, transmitting, or selling personal information.
+            </p>
+            <p>
+            The extension stores only the user’s highlight keywords and activation setting on the device using <code>chrome.storage.local</code>, and it does not send this information to any server or third party.
+            </p>
+            <p>
+            No analytics, telemetry, tracking pixels, or remote logging are present in the extension.
+            </p>
+        </section>
+
+        <hr class="section-divider">
+
+        <section aria-labelledby="scope">
+            <h2 id="scope">Scope</h2>
+            <p>
+            This Privacy Policy applies to the Highlight Plus Chrome extension only. The codebase for the extension is private. Support, help, donate, and this policy page are hosted separately and may be governed by a distinct website privacy policy.
+            </p>
+        </section>
+
+        <hr class="section-divider">
+
+        <section aria-labelledby="collection">
+            <h2 id="collection">What is collected</h2>
+            <p>
+            No personal information, browsing history, or page content is collected, transmitted, or stored by Highlight Plus beyond what is necessary to perform local highlighting within the current page’s DOM. The only data saved is the user’s highlight keywords and the on/off toggle state, which are stored locally. No identifiers, account data, contact information, or sensitive categories are requested or stored by the extension.
+            </p>
+        </section>
+
+        <hr class="section-divider">
+
+        <section aria-labelledby="nosale">
+            <h2 id="nosale">No sale or sharing</h2>
+            <p>
+            Highlight Plus does not sell, share, or rent personal information, and does not disclose user data to third parties for cross‑context behavioral advertising. No personal data is collected by the extension.
+            </p>
+        </section>
+
+        <hr class="section-divider">
+
+        <section aria-labelledby="storage">
+            <h2 id="storage">How data is stored</h2>
+            <p>
+            Highlight keywords and the activation setting are saved in <code>chrome.storage.local</code> on the user’s device, not synced to cloud services and not transmitted off‑device by the extension. These values persist across browser sessions until changed or removed by the user or until the extension is uninstalled. No external databases or servers are used by the extension’s code.
+            </p>
+        </section>
+
+        <hr class="section-divider">
+
+        <section aria-labelledby="howitworks">
+            <h2 id="howitworks">How the extension works</h2>
+            <p>
+            The highlighter module traverses the page’s text nodes and wraps matches in lightweight elements to render highlights, all performed in the browser context without network communication. A content script reacts to user settings (keywords and on/off status) and to DOM changes to re‑apply highlights, again entirely on‑device. There are no fetch calls, analytics libraries, or remote endpoints used by the extension for its core functionality.
+            </p>
+        </section>
+                
+        <hr class="section-divider">
+
+        <section aria-labelledby="permissions">
+            <h2 id="permissions">Permissions</h2>
+            <p>
+            The manifest declares tabs, storage, scripting, and activeTab permissions, plus host permissions for http, https, and file URLs, so the extension can inject its content scripts and CSS and save the local settings needed for highlighting. The background service worker injects CSS and scripts into matching pages to enable highlighting and relays local settings to content scripts, without transmitting any user data externally. 
+            </p>
+        </section>
+                
+        <hr class="section-divider">
+
+        <section aria-labelledby="sharing">
+            <h2 id="sharing">Data sharing and transfers</h2>
+            <p>
+            The extension does not share data with third parties and does not transfer user data off the device, because it does not collect such data in the first place. When the user clicks Support or Donate in the popup, a new tab opens to the project’s support or donate page, but this is user‑initiated navigation and no user data is programmatically transmitted by the extension. No advertising, tracking, or analytics code is included in the extension.
+            </p>
+        </section>
+
+        <hr class="section-divider">
+
+        <section aria-labelledby="legal">
+            <h2 id="legal">Legal basis and rights</h2>
+            <p>
+            The extension does not process personal data. If a user initiates contact by email, that correspondence is processed solely to respond to the inquiry and is retained only as necessary. Individuals may request access or deletion of such correspondence via the contact method below.
+            </p>     
+        </section>
+
+        <hr class="section-divider">
+
+        <section aria-labelledby="thirdparty">
+            <h2 id="thirdparty">Third-party code</h2>
+            <p>
+            The extension includes a bundled copy of jQuery solely to facilitate DOM operations locally within the browser. This library is packaged with the extension and does not transmit data to external services. No other third‑party services, SDKs, or analytics frameworks are integrated.
+            </p>
+        </section>
+
+        <hr class="section-divider">
+
+        <section aria-labelledby="controls">
+            <h2 id="controls">User controls and deletion</h2>
+            <p>
+            Users control what is highlighted by editing or clearing the keywords in the popup, and can toggle highlighting on or off at any time. Clearing the keywords and/or uninstalling the extension removes locally stored settings from <code>chrome.storage.local</code>. The extension provides no remote storage, and there is nothing to delete from external servers.
+            </p>
+        </section>
+
+        <hr class="section-divider">
+
+        <section aria-labelledby="children">
+            <h2 id="children">Children’s privacy</h2>
+            <p>
+            Because the extension does not collect personal information or create user profiles, it does not knowingly collect information from children or minors. The extension’s operation is limited to on‑device processing of page text for the purpose of highlighting user‑specified keywords. No transmission of data off the device occurs.
+            </p>
+        </section>
+
+        <hr class="section-divider">
+
+        <section aria-labelledby="security">
+            <h2 id="security">Security</h2>
+            <p>
+            By design, Highlight Plus minimizes data handling by keeping settings on‑device and avoiding any network transmission of user data. The code injects only its own bundled scripts and styles for highlighting, and performs no external fetches or network requests for its core operation. Users can further limit exposure by disabling the extension on sites where highlighting is not needed.
+            </p>
+        </section>
+
+        <hr class="section-divider">
+
+        <section aria-labelledby="dnt">
+            <h2 id="dnt">Do Not Track and GPC</h2>
+            <p>
+            The extension does not track users across sites and does not transmit data off‑device. It does not alter website tracking nor send or respond to Do Not Track or Global Privacy Control signals.
+            </p> 
+        </section>
+                
+        <hr class="section-divider">
+
+        <section aria-labelledby="changes">
+            <h2 id="changes">Changes to this policy</h2>
+            <p>
+            If the extension’s capabilities change (for example, adding features that require network communication), this policy will be updated before such changes are published. The extension will continue to avoid collecting or transmitting personal data unless explicitly documented here in a future version.
+            </p>
+        </section>
+
+        <hr class="section-divider">
+
+        <section aria-labelledby="contact">
+            <h2 id="contact">Contact</h2>
+            <p>
+            For privacy questions or requests related to the Highlight Plus extension, <a href="mailto:highlighterplus@gmail.com">email</a>. This contact is for the extension only; website privacy questions are addressed in the website’s policy.
+            </p>
+        </section>
+
+        <hr class="section-divider">
+
+        <section aria-labelledby="website">
+            <h2 id="website">Website notice</h2>
+            <p>
+            This policy page is informational and is hosted on GitHub Pages. Hosting providers for the support/help/donate site may collect standard access logs; for details, please refer to GitHub’s <a href="https://docs.github.com/site-policy/privacy-policies/github-privacy-statement" target="_blank" rel="noopener noreferrer">Privacy Statement</a> and <a href="https://docs.github.com/en/site-policy/privacy-policies/github-cookies" target="_blank" rel="noopener noreferrer">Cookies</a>.
+            </p>
+        </section>
+                
+        <hr class="section-divider">
+
+        <section aria-labelledby="effective">
+            <h2 id="effective">Effective date</h2>
+            <p>
+            This policy is effective as of 26 September 2025. Subsequent updates will revise the effective date and the description of processing if the extension’s behavior changes.
+            </p>
+        </section>
+        </main>
+
+        <footer class="footer container" role="contentinfo">
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-center py-3">
+            <div class="small text-muted">
+            © 2025 imeanup • 
+            <a href="https://github.com/imeanup/highlighter-support" target="_blank" rel="noopener noreferrer">Repository</a> • 
+            <a href="https://github.com/imeanup/highlighter-support/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">GPL‑3.0</a>
+            </div>
+            <div class="mt-2 mt-md-0">
+            <a class="btn btn-sm btn-outline-secondary me-2" href="https://github.com/imeanup/highlighter-support" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <i class="fa-brands fa-github" aria-hidden="true"></i>
+            </a>
+            <a class="btn btn-sm btn-outline-secondary" href="help.html" aria-label="Help">
+                <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+            </a>
+            </div>
+        </div>
+        </footer>
+    </body>
+</html>
