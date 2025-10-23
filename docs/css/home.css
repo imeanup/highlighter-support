@@ -151,6 +151,31 @@ header.site-header{
     border-radius: 8px;
 }
 
+.btn-download {
+    display: inline-block;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    position: relative;
+    margin: 0;
+    font-family: Roboto !important;
+    font-size: 1rem;
+    font-weight: 400 !important;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.btn-download:hover,
+.btn-download:focus {
+    background-color: #00c666;
+    border-color: #00c666;
+    color: #fff;
+}
+
 .sponsor-note {
     line-height: 1.2;
     margin-top: .5rem;
