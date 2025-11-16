@@ -125,16 +125,18 @@
         <section>
             <h2><i class="fa-solid fa-triangle-exclamation text-danger"></i> Troubleshooting</h2>
             <ul>
+            <li><strong>Problem:</strong> Textarea scroll position resets / is anchored to the top.
+                <ul>
+                    <li><strong>Fix:</strong> Resolved in <strong>v2.0.3</strong> (production). Chrome Web Store rollout: <strong>v1.0.1</strong> after testing.</li>
+                    <li><em>Details:</em> measurement and resizing logic updated to preserve the textarea's scroll/caret and avoid layout reflows (prevents scroll anchoring). If you still see the behavior, please update the extension and re-open the popup.</li>
+                </ul>
+            </li>
             <li><strong>Problem:</strong> New words disappear when switching tabs.
                 <ul>
-                <li><strong>Fix:</strong> Wait ~200ms for the popup to save (or open popup and wait briefly). Update the extension if this persists.</li>
+                    <li><strong>Fix:</strong> Wait ~200ms for the popup to save (or open popup and wait briefly). Update the extension if this persists.</li>
                 </ul>
             </li>
-            <li><strong>Problem:</strong> “message port closed” console warnings.
-                <ul>
-                <li><strong>Fix:</strong> Use the latest extension version — fixed in v2.0.2</li>
-                </ul>
-            </li>
+            
             </ul>
         </section>
         <!-- 
@@ -187,6 +189,7 @@
         <section>
             <h2><i class="fa-solid fa-clock-rotate-left text-muted"></i> Production changelog (short)</h2>
             <ul>
+                <li>v2.0.3 — Fixed popup textarea scroll/jump issue. Rolling out to Chrome Web Store as v1.0.1. (Nov 2025)</li>
                 <li>v2.0.2 — Fixed view switch from <code>grid/list/kanban/...</code> re-run renders highlighting without toggle.</li>
                 <li>v2.0.1 — Fixed css rendering on popup box.</li>
                 <li>v2.0.0 — Upgraded <code>jQuery v3.7.1</code> and updated the highlighter file.</li>
